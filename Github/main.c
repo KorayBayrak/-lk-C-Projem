@@ -31,6 +31,25 @@ struct k7 {
 	char isim[40];
 	float BirimFiyat;
 };
+void kartbilgi()
+{
+	int kkart,skt,cvv;
+	printf("\n*************************************************\n");
+	printf("Kredi Karti numaranizi giriniz:");
+	scanf("%d",&kkart);
+	printf("Kredi Kartinizin son kullanma tarihini giriniz:");
+	scanf("%d",&skt);
+	printf("Kredi Kartinizin CVV numarasini giriniz:");
+	scanf("%d",&cvv);
+	printf("\n*************************************************\n");
+	printf("Siparisiniz basariyla olusturulmustur.Iyi gunler dileriz.");
+}
+void dosyalama(char* Urunisim)
+{
+	FILE *dosya= fopen("kayit2.txt","a");
+	fprintf(dosya,"%s\n",Urunisim);
+	fclose(dosya);
+}
 int main() {
 	
 	int tel;
@@ -49,6 +68,9 @@ int main() {
 	getchar();								
 	printf("Adresiniz:");
 	scanf("%[^\n]",&adres);
+	FILE *fp= fopen("kayit.txt","a");
+	fprintf(fp,"%s %s %d %s\n",ad,soyad,tel,adres);
+	fclose(fp);
 	printf("*************************************************\n");
 	printf("Bilgileriniz:\n");
 	printf("%s\n",ad);
@@ -164,6 +186,7 @@ int main() {
 						SepetToplam=SepetToplam+tutar;
 						tutar=0;
 						adet=0;
+						dosyalama(urun1.isim);
 					}
 					else if(urunNo==2)
 					{
@@ -171,6 +194,7 @@ int main() {
 						SepetToplam=SepetToplam+tutar;
 						tutar=0;
 						adet=0;
+						dosyalama(urun2.isim);
 					}
 					else if(urunNo==3)
 					{
@@ -178,6 +202,7 @@ int main() {
 						SepetToplam=SepetToplam+tutar;
 						tutar=0;
 						adet=0;
+						dosyalama(urun3.isim);
 					}		
 					else(urunNo==4);
 					{
@@ -185,6 +210,7 @@ int main() {
 						SepetToplam=SepetToplam+tutar;
 						tutar=0;
 						adet=0;
+						dosyalama(urun4.isim);
 					}
 					printf("*************************************************\n");
 					printf("Sepet Tutariniz:%.2f TL",SepetToplam);
@@ -208,6 +234,7 @@ int main() {
 						SepetToplam=SepetToplam+tutar;
 						tutar=0;
 						adet=0;
+						dosyalama(Aurun1.isim);
 					}
 					else if(urunNo==2)
 					{
@@ -215,6 +242,7 @@ int main() {
 						SepetToplam=SepetToplam+tutar;
 						tutar=0;
 						adet=0;
+						dosyalama(Aurun2.isim);
 					}
 					else if(urunNo==3)
 					{
@@ -222,6 +250,7 @@ int main() {
 						SepetToplam=SepetToplam+tutar;
 						tutar=0;
 						adet=0;
+						dosyalama(Aurun3.isim);
 					}
 					else(urunNo==4);
 					{
@@ -229,6 +258,7 @@ int main() {
 						SepetToplam=SepetToplam+tutar;
 						tutar=0;
 						adet=0;
+						dosyalama(Aurun4.isim);
 					}
 					printf("*************************************************\n");
 					printf("Sepet Tutariniz:%.2f TL",SepetToplam);
@@ -252,6 +282,7 @@ int main() {
 						SepetToplam=SepetToplam+tutar;
 						tutar=0;
 						adet=0;
+						dosyalama(Burun1.isim);
 					}
 					else if(urunNo==2)
 					{
@@ -259,6 +290,7 @@ int main() {
 						SepetToplam=SepetToplam+tutar;
 						tutar=0;
 						adet=0;
+						dosyalama(Burun2.isim);
 					}
 					else if(urunNo==3)
 					{
@@ -266,6 +298,7 @@ int main() {
 						SepetToplam=SepetToplam+tutar;
 						tutar=0;
 						adet=0;
+						dosyalama(Burun3.isim);
 					}
 					else(urunNo==4);
 					{
@@ -273,6 +306,7 @@ int main() {
 						SepetToplam=SepetToplam+tutar;
 						tutar=0;
 						adet=0;
+						dosyalama(Burun4.isim);
 				    }
 			    	printf("*************************************************\n");
 					printf("Sepet Tutariniz:%.2f TL",SepetToplam);
@@ -296,6 +330,7 @@ int main() {
 						SepetToplam=SepetToplam+tutar;
 						tutar=0;
 						adet=0;
+						dosyalama(Curun1.isim);
 					}
 					else if(urunNo==2)
 					{
@@ -303,6 +338,7 @@ int main() {
 						SepetToplam=SepetToplam+tutar;
 						tutar=0;
 						adet=0;
+						dosyalama(Curun2.isim);
 					}
 					else if(urunNo==3)
 					{
@@ -310,6 +346,7 @@ int main() {
 						SepetToplam=SepetToplam+tutar;
 						tutar=0;
 						adet=0;
+						dosyalama(Curun3.isim);
 					}		
 					else(urunNo==4);
 					{
@@ -317,6 +354,7 @@ int main() {
 						SepetToplam=SepetToplam+tutar;
 						tutar=0;
 						adet=0;
+						dosyalama(Curun4.isim);
 					}
 					printf("*************************************************\n");
 					printf("Sepet Tutariniz:%.2f TL",SepetToplam);
@@ -340,6 +378,7 @@ int main() {
 						SepetToplam=SepetToplam+tutar;
 						tutar=0;
 						adet=0;
+						dosyalama(Durun1.isim);
 					}
 					else if(urunNo==2)
 					{
@@ -347,6 +386,7 @@ int main() {
 						SepetToplam=SepetToplam+tutar;
 						tutar=0;
 						adet=0;
+						dosyalama(Durun2.isim);
 					}
 					else if(urunNo==3)
 					{
@@ -354,6 +394,7 @@ int main() {
 						SepetToplam=SepetToplam+tutar;
 						tutar=0;
 						adet=0;
+						dosyalama(Durun3.isim);
 					}		
 					else(urunNo==4);
 					{
@@ -361,6 +402,7 @@ int main() {
 						SepetToplam=SepetToplam+tutar;
 						tutar=0;
 						adet=0;
+						dosyalama(Durun4.isim);
 					}
 					printf("*************************************************\n");
 					printf("Sepet Tutariniz:%.2f TL",SepetToplam);
@@ -384,6 +426,7 @@ int main() {
 						SepetToplam=SepetToplam+tutar;
 						tutar=0;
 						adet=0;
+						dosyalama(Eurun1.isim);
 					}
 					else if(urunNo==2)
 					{
@@ -391,6 +434,7 @@ int main() {
 						SepetToplam=SepetToplam+tutar;
 						tutar=0;
 						adet=0;
+						dosyalama(Eurun2.isim);
 					}
 					else if(urunNo==3)
 					{
@@ -398,6 +442,7 @@ int main() {
 						SepetToplam=SepetToplam+tutar;
 						tutar=0;
 						adet=0;
+						dosyalama(Eurun3.isim);
 					}		
 					else(urunNo==4);
 					{
@@ -405,6 +450,7 @@ int main() {
 						SepetToplam=SepetToplam+tutar;
 						tutar=0;
 						adet=0;
+						dosyalama(Eurun4.isim);
 					}
 					printf("*************************************************\n");
 					printf("Sepet Tutariniz:%.2f TL",SepetToplam);
@@ -428,6 +474,7 @@ int main() {
 						SepetToplam=SepetToplam+tutar;
 						tutar=0;
 						adet=0;
+						dosyalama(Furun1.isim);
 					}
 					else if(urunNo==2)
 					{
@@ -435,6 +482,7 @@ int main() {
 						SepetToplam=SepetToplam+tutar;
 						tutar=0;
 						adet=0;
+						dosyalama(Furun2.isim);
 					}
 					else if(urunNo==3)
 					{
@@ -442,6 +490,7 @@ int main() {
 						SepetToplam=SepetToplam+tutar;
 						tutar=0;
 						adet=0;
+						dosyalama(Furun3.isim);
 					}		
 					else(urunNo==4);
 					{
@@ -449,6 +498,7 @@ int main() {
 						SepetToplam=SepetToplam+tutar;
 						tutar=0;
 						adet=0;
+						dosyalama(Furun4.isim);
 					}
 					printf("*************************************************\n");
 					printf("Sepet Tutariniz:%.2f TL",SepetToplam);
@@ -490,28 +540,12 @@ int main() {
 						{
 							SepetToplam=(SepetToplam+16.99);
 							printf("Genel Toplam:%.2f TL",SepetToplam);
-							printf("\n*************************************************\n");
-							printf("Kredi Karti numaranizi giriniz:");
-							scanf("%d",&kkart);
-							printf("Kredi Kartinizin son kullanma tarihini giriniz:");
-							scanf("%d",&skt);
-							printf("Kredi Kartinizin CVV numarasini giriniz:");
-							scanf("%d",&cvv);
-							printf("\n*************************************************\n");
-							printf("Siparisinizi basariyla olusturulmustur.Iyi gunler dileriz.");
+							kartbilgi();
 						}
 						else
 						{
 							printf("Genel Toplam:%.2f TL",SepetToplam);
-							printf("\n*************************************************\n");
-							printf("Kredi Karti numaranizi giriniz:");
-							scanf("%d",&kkart);
-							printf("Kredi Kartinizin son kullanma tarihini giriniz:");
-							scanf("%d",&skt);
-							printf("Kredi Kartinizin CVV numarasini giriniz:");
-							scanf("%d",&cvv);
-							printf("\n*************************************************\n");
-							printf("Siparisinizi basariyla olusturulmustur.Iyi gunler dileriz.");
+							kartbilgi();
 						}
 					}
 			}
@@ -604,28 +638,12 @@ int main() {
 						{
 							SepetToplam=(SepetToplam+16.99);
 							printf("Genel Toplam:%.2f TL",SepetToplam);
-							printf("\n*************************************************\n");
-							printf("Kredi Karti numaranizi giriniz:");
-							scanf("%d",&kkart);
-							printf("Kredi Kartinizin son kullanma tarihini giriniz:");
-							scanf("%d",&skt);
-							printf("Kredi Kartinizin CVV numarasini giriniz:");
-							scanf("%d",&cvv);
-							printf("\n*************************************************\n");
-							printf("Siparisinizi basariyla olusturulmustur.Iyi gunler dileriz.");
+							kartbilgi();
 						}
 						else
 						{
 							printf("Genel Toplam:%.2f TL",SepetToplam);
-							printf("\n*************************************************\n");
-							printf("Kredi Karti numaranizi giriniz:");
-							scanf("%d",&kkart);
-							printf("Kredi Kartinizin son kullanma tarihini giriniz:");
-							scanf("%d",&skt);
-							printf("Kredi Kartinizin CVV numarasini giriniz:");
-							scanf("%d",&cvv);
-							printf("\n*************************************************\n");
-							printf("Siparisinizi basariyla olusturulmustur.Iyi gunler dileriz.");
+							kartbilgi();
 						}
 					}
 			}				
@@ -709,28 +727,12 @@ int main() {
 						{
 							SepetToplam=(SepetToplam+16.99);
 							printf("Genel Toplam:%.2f TL",SepetToplam);
-							printf("\n*************************************************\n");
-							printf("Kredi Karti numaranizi giriniz:");
-							scanf("%d",&kkart);
-							printf("Kredi Kartinizin son kullanma tarihini giriniz:");
-							scanf("%d",&skt);
-							printf("Kredi Kartinizin CVV numarasini giriniz:");
-							scanf("%d",&cvv);
-							printf("\n*************************************************\n");
-							printf("Siparisinizi basariyla olusturulmustur.Iyi gunler dileriz.");
+							kartbilgi();
 						}
 						else
 						{
 							printf("Genel Toplam:%.2f TL",SepetToplam);
-							printf("\n*************************************************\n");
-							printf("Kredi Karti numaranizi giriniz:");
-							scanf("%d",&kkart);
-							printf("Kredi Kartinizin son kullanma tarihini giriniz:");
-							scanf("%d",&skt);
-							printf("Kredi Kartinizin CVV numarasini giriniz:");
-							scanf("%d",&cvv);
-							printf("\n*************************************************\n");
-							printf("Siparisinizi basariyla olusturulmustur.Iyi gunler dileriz.");
+							kartbilgi();
 						}
 					}
 			}
@@ -814,28 +816,12 @@ int main() {
 						{
 							SepetToplam=(SepetToplam+16.99);
 							printf("Genel Toplam:%.2f TL",SepetToplam);
-							printf("\n*************************************************\n");
-							printf("Kredi Karti numaranizi giriniz:");
-							scanf("%d",&kkart);
-							printf("Kredi Kartinizin son kullanma tarihini giriniz:");
-							scanf("%d",&skt);
-							printf("Kredi Kartinizin CVV numarasini giriniz:");
-							scanf("%d",&cvv);
-							printf("\n*************************************************\n");
-							printf("Siparisinizi basariyla olusturulmustur.Iyi gunler dileriz.");
+							kartbilgi();
 						}
 						else
 						{
 							printf("Genel Toplam:%.2f TL",SepetToplam);
-							printf("\n*************************************************\n");
-							printf("Kredi Karti numaranizi giriniz:");
-							scanf("%d",&kkart);
-							printf("Kredi Kartinizin son kullanma tarihini giriniz:");
-							scanf("%d",&skt);
-							printf("Kredi Kartinizin CVV numarasini giriniz:");
-							scanf("%d",&cvv);
-							printf("\n*************************************************\n");
-							printf("Siparisinizi basariyla olusturulmustur.Iyi gunler dileriz.");
+							kartbilgi();
 						}
 					}
 			}
@@ -919,28 +905,12 @@ int main() {
 						{
 							SepetToplam=(SepetToplam+16.99);
 							printf("Genel Toplam:%.2f TL",SepetToplam);
-							printf("\n*************************************************\n");
-							printf("Kredi Karti numaranizi giriniz:");
-							scanf("%d",&kkart);
-							printf("Kredi Kartinizin son kullanma tarihini giriniz:");
-							scanf("%d",&skt);
-							printf("Kredi Kartinizin CVV numarasini giriniz:");
-							scanf("%d",&cvv);
-							printf("\n*************************************************\n");
-							printf("Siparisinizi basariyla olusturulmustur.Iyi gunler dileriz.");
+							kartbilgi();
 						}
 						else
 						{
 							printf("Genel Toplam:%.2f TL",SepetToplam);
-							printf("\n*************************************************\n");
-							printf("Kredi Karti numaranizi giriniz:");
-							scanf("%d",&kkart);
-							printf("Kredi Kartinizin son kullanma tarihini giriniz:");
-							scanf("%d",&skt);
-							printf("Kredi Kartinizin CVV numarasini giriniz:");
-							scanf("%d",&cvv);
-							printf("\n*************************************************\n");
-							printf("Siparisinizi basariyla olusturulmustur.Iyi gunler dileriz.");
+							kartbilgi();
 						}
 					}
 			}
@@ -1024,28 +994,12 @@ int main() {
 						{
 							SepetToplam=(SepetToplam+16.99);
 							printf("Genel Toplam:%.2f TL",SepetToplam);
-							printf("\n*************************************************\n");
-							printf("Kredi Karti numaranizi giriniz:");
-							scanf("%d",&kkart);
-							printf("Kredi Kartinizin son kullanma tarihini giriniz:");
-							scanf("%d",&skt);
-							printf("Kredi Kartinizin CVV numarasini giriniz:");
-							scanf("%d",&cvv);
-							printf("\n*************************************************\n");
-							printf("Siparisinizi basariyla olusturulmustur.Iyi gunler dileriz.");
+							kartbilgi();
 						}
 						else
 						{
 							printf("Genel Toplam:%.2f TL",SepetToplam);
-							printf("\n*************************************************\n");
-							printf("Kredi Karti numaranizi giriniz:");
-							scanf("%d",&kkart);
-							printf("Kredi Kartinizin son kullanma tarihini giriniz:");
-							scanf("%d",&skt);
-							printf("Kredi Kartinizin CVV numarasini giriniz:");
-							scanf("%d",&cvv);
-							printf("\n*************************************************\n");
-							printf("Siparisinizi basariyla olusturulmustur.Iyi gunler dileriz.");
+							kartbilgi();
 						}
 					}
 			}
@@ -1100,7 +1054,7 @@ int main() {
 				scanf("%d",&secim2);
 				printf("*************************************************\n");
 				if(secim2==1)
-			{
+				{
 				printf("Sepet Tutariniz:%.2f TL",SepetToplam);
 				printf("\n*************************************************\n");
 				printf("Odeme yontemi seciniz:\n1)Kapida Odeme\n2)Kredi karti");
@@ -1129,28 +1083,12 @@ int main() {
 						{
 							SepetToplam=(SepetToplam+16.99);
 							printf("Genel Toplam:%.2f TL",SepetToplam);
-							printf("\n*************************************************\n");
-							printf("Kredi Karti numaranizi giriniz:");
-							scanf("%d",&kkart);
-							printf("Kredi Kartinizin son kullanma tarihini giriniz:");
-							scanf("%d",&skt);
-							printf("Kredi Kartinizin CVV numarasini giriniz:");
-							scanf("%d",&cvv);
-							printf("\n*************************************************\n");
-							printf("Siparisinizi basariyla olusturulmustur.Iyi gunler dileriz.");
+							kartbilgi();
 						}
 						else
 						{
 							printf("Genel Toplam:%.2f TL",SepetToplam);
-							printf("\n*************************************************\n");
-							printf("Kredi Karti numaranizi giriniz:");
-							scanf("%d",&kkart);
-							printf("Kredi Kartinizin son kullanma tarihini giriniz:");
-							scanf("%d",&skt);
-							printf("Kredi Kartinizin CVV numarasini giriniz:");
-							scanf("%d",&cvv);
-							printf("\n*************************************************\n");
-							printf("Siparisinizi basariyla olusturulmustur.Iyi gunler dileriz.");
+							kartbilgi();
 						}
 					}
 			}
@@ -1234,28 +1172,12 @@ int main() {
 						{
 							SepetToplam=(SepetToplam+16.99);
 							printf("Genel Toplam:%.2f TL",SepetToplam);
-							printf("\n*************************************************\n");
-							printf("Kredi Karti numaranizi giriniz:");
-							scanf("%d",&kkart);
-							printf("Kredi Kartinizin son kullanma tarihini giriniz:");
-							scanf("%d",&skt);
-							printf("Kredi Kartinizin CVV numarasini giriniz:");
-							scanf("%d",&cvv);
-							printf("\n*************************************************\n");
-							printf("Siparisinizi basariyla olusturulmustur.Iyi gunler dileriz.");
+							kartbilgi();
 						}
 						else
 						{
 							printf("Genel Toplam:%.2f TL",SepetToplam);
-							printf("\n*************************************************\n");
-							printf("Kredi Karti numaranizi giriniz:");
-							scanf("%d",&kkart);
-							printf("Kredi Kartinizin son kullanma tarihini giriniz:");
-							scanf("%d",&skt);
-							printf("Kredi Kartinizin CVV numarasini giriniz:");
-							scanf("%d",&cvv);
-							printf("\n*************************************************\n");
-							printf("Siparisinizi basariyla olusturulmustur.Iyi gunler dileriz.");
+							kartbilgi();
 						}
 					}
 				}
